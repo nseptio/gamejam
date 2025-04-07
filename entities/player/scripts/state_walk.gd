@@ -5,6 +5,8 @@ class_name State_Walk extends State
 @onready var idle: State = $"../Idle"
 @onready var attack: State = $"../Attack"
 
+func init() -> void:
+	pass
 
 # What happens if the player enter the state
 func enter() -> void:

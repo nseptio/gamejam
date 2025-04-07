@@ -65,10 +65,22 @@ func animation_direction() -> String:
 	return "side"
 
 func _take_damage(hurt_box: HurtBox) -> void:
-	pass
+	if is_invulnerable:
+		return
+	update_hp(-hurt_box.damage)
+	if hp > 0:
+		player_damaged.emit(hurt_box)
+	else:
+		player_damaged.emit(hurt_box)
+		update_hp(99) # temp
 
 func update_hp(delta: int) -> void:
-	pass
+	hp = clampi(hp + delta, 0, max_hp)
 
-func make_invulnerable() -> void:
-	pass
+func make_invulnerable(_duration: float = 1.0) -> void:
+	is_invulnerable = true
+	hit_box.monitoring = false
+	
+	await get_tree().create_timer(_duration).timeout
+	is_invulnerable = false
+	hit_box.monitoring = true

@@ -13,6 +13,9 @@ var is_attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @onready var attack_audio_player: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
+func init() -> void:
+	pass
+
 # What happens if the player enter the state
 func enter() -> void:
 	player.update_animation("attack")
