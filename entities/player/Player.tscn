@@ -615,7 +615,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mab2k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -19)
+position = Vector2(0, -20)
 texture = ExtResource("2_g3lhm")
 hframes = 16
 vframes = 3
