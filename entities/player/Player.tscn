@@ -17,8 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://cbnssd2ip15xm" path="res://entities/player/audio/hit_player.wav" id="14_kwk8g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mab2k"]
-radius = 8.0
-height = 28.0
+radius = 7.0
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_mq27t"]
 length = 0.001
