@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs2tfdk1ko50n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgdra"]
+size = Vector2(64, 64)
+
+[node name="FinalGate" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+shape = SubResource("RectangleShape2D_jgdra")
+debug_color = Color(0.994632, 0, 0.218929, 0.42)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
