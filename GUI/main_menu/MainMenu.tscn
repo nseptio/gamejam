@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpge3ns3p2ial"]
+
+[ext_resource type="Script" uid="uid://b3q21qfld8bsc" path="res://GUI/main_menu/main_menu.gd" id="1_jykn4"]
+[ext_resource type="Texture2D" uid="uid://cdqf8mbgv8e6c" path="res://entities/props/sprites/TX Props.png" id="2_jxn21"]
+[ext_resource type="FontFile" uid="uid://0lm7ojbu4lit" path="res://GUI/Pixeled.ttf" id="2_nv7a7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv7a7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxn21"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kylx"]
+
+[node name="MainMenu" type="CanvasLayer"]
+layer = 10
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jykn4")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.192157, 0.145098, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(360, 112)
+texture = ExtResource("2_jxn21")
+region_enabled = true
+region_rect = Rect2(435, 15, 60, 84)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(366, 186)
+texture = ExtResource("2_jxn21")
+region_enabled = true
+region_rect = Rect2(348, 259, 117, 81)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(433, 121)
+texture = ExtResource("2_jxn21")
+region_enabled = true
+region_rect = Rect2(213, 78, 51, 83)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(281, 120)
+texture = ExtResource("2_jxn21")
+region_enabled = true
+region_rect = Rect2(213, 78, 51, 83)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(361, 221)
+texture = ExtResource("2_jxn21")
+region_enabled = true
+region_rect = Rect2(220, 295, 43, 56)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -82.0
+offset_right = 112.0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+theme_override_fonts/font = ExtResource("2_nv7a7")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nv7a7")
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../StartButton")
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_right = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../StartButton")
+theme_override_fonts/font = ExtResource("2_nv7a7")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jxn21")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kylx")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 286.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_nv7a7")
+text = "Lost Kingdom Island"

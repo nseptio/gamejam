@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6gv4u05rofr8"]
+
+[ext_resource type="Script" uid="uid://c08px8hhrfsb0" path="res://GUI/main_menu/story.gd" id="1_51ddl"]
+[ext_resource type="FontFile" uid="uid://0lm7ojbu4lit" path="res://GUI/Pixeled.ttf" id="3_f2uq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sll7t"]
+bg_color = Color(0.6, 0.0627451, 0.772549, 0.203922)
+
+[node name="Story" type="CanvasLayer"]
+layer = 10
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51ddl")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.192157, 0.145098, 1)
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -37.0
+offset_right = 48.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.473184, 0.710404, 0.605242, 1)
+theme_override_fonts/font = ExtResource("3_f2uq4")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_sll7t")
+text = "Start Game"
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 460.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 13
+text = "\"You are a Hunter. Within the Guild halls, rumors circulate about a remote island marked by a dungeon that remains unconquered by any adventurer. Legends insist that deep within this treacherous place, an Ancient Relic awaits, guarded by untold dangers.
+
+This powerful artifact is said to grant a single wish to whoever claims it. Though the island is infamous for its lethal perils, the allure of such a reward—the power to fulfill any desire—calls to you. Your quest to the dangerous shores begins.\""
+horizontal_alignment = 1
+autowrap_mode = 2
