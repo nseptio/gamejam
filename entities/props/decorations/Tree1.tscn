@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dogm6kqjpuxhu"]
+
+[ext_resource type="Texture2D" uid="uid://b5oj3utumi7j6" path="res://entities/props/sprites/TX Plant.png" id="1_kbuwo"]
+[ext_resource type="Texture2D" uid="uid://b3lu0olvrplf3" path="res://entities/props/sprites/TX Shadow Plant.png" id="2_34iet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo8xk"]
+size = Vector2(10, 17)
+
+[node name="Tree" type="Node2D"]
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(1, -23)
+texture = ExtResource("2_34iet")
+region_enabled = true
+region_rect = Rect2(157, 100, 101, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -66)
+texture = ExtResource("1_kbuwo")
+region_enabled = true
+region_rect = Rect2(157, 13, 101, 145)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_oo8xk")

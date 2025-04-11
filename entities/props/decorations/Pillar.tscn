@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkdw3n77ea70k"]
+
+[ext_resource type="Texture2D" uid="uid://c320fieylm5c" path="res://entities/props/sprites/TX Shadow.png" id="1_4qv5x"]
+[ext_resource type="Texture2D" uid="uid://cdqf8mbgv8e6c" path="res://entities/props/sprites/TX Props.png" id="2_mkpd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm31e"]
+size = Vector2(31, 27)
+
+[node name="Pillar" type="Node2D"]
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(8, -11)
+texture = ExtResource("1_4qv5x")
+region_enabled = true
+region_rect = Rect2(348, 200, 51, 55)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("2_mkpd6")
+region_enabled = true
+region_rect = Rect2(348, 170, 39, 82)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_dm31e")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b54qun6kgbqnw"]
+[gd_scene load_steps=7 format=3 uid="uid://b54qun6kgbqnw"]
 
 [ext_resource type="Texture2D" uid="uid://b5oj3utumi7j6" path="res://entities/props/sprites/TX Plant.png" id="1_mht35"]
-[ext_resource type="Script" uid="uid://bbu71se6g37qy" path="res://entities/props/plant/scripts/plant.gd" id="1_uouul"]
+[ext_resource type="Script" uid="uid://bbu71se6g37qy" path="res://entities/props/plant/plant.gd" id="1_uouul"]
+[ext_resource type="Texture2D" uid="uid://b3lu0olvrplf3" path="res://entities/props/sprites/TX Shadow Plant.png" id="2_21dgg"]
 [ext_resource type="PackedScene" uid="uid://m28huhruscn4" path="res://common/hit_box/HitBox.tscn" id="2_cms30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uouul"]
@@ -12,6 +13,13 @@ size = Vector2(24, 16)
 
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_uouul")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(3, -1)
+texture = ExtResource("2_21dgg")
+region_enabled = true
+region_rect = Rect2(346, 195, 46, 36)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)

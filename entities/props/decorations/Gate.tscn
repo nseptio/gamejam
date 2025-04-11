@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpcd2he70sf17"]
+
+[ext_resource type="Texture2D" uid="uid://cxf0ygemvpfu" path="res://tilemaps/sprites/TX Struct.png" id="1_baanu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohdbd"]
+size = Vector2(16.5, 62.5)
+
+[node name="Gate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("1_baanu")
+region_enabled = true
+region_rect = Rect2(412, 122, 73, 74)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -4)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(23.25, -20)
+shape = SubResource("RectangleShape2D_ohdbd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-24.5, -21.75)
+shape = SubResource("RectangleShape2D_ohdbd")

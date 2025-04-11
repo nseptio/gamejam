@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpoli565nxmyx"]
+
+[ext_resource type="Texture2D" uid="uid://c320fieylm5c" path="res://entities/props/sprites/TX Shadow.png" id="1_jo8fu"]
+[ext_resource type="Texture2D" uid="uid://cdqf8mbgv8e6c" path="res://entities/props/sprites/TX Props.png" id="2_al8i3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqed4"]
+radius = 38.0
+height = 92.0
+
+[node name="StoneCircle" type="Node2D"]
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(3, -28)
+texture = ExtResource("1_jo8fu")
+region_enabled = true
+region_rect = Rect2(348, 263, 106, 83)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("2_al8i3")
+region_enabled = true
+region_rect = Rect2(349, 262, 104, 83)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -22)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sqed4")
