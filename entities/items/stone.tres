@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://0xfhe57ggprb"]
+
+[ext_resource type="Script" uid="uid://c6ien7mhsrxy4" path="res://entities/items/scripts/item_data.gd" id="1_ogdfq"]
+[ext_resource type="Texture2D" uid="uid://cxcrfhb1pue2x" path="res://entities/items/sprites/items.png" id="2_e00fa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vod0c"]
+atlas = ExtResource("2_e00fa")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_ogdfq")
+name = "Stone"
+description = "Why did you take this stone anyway? Maybe it would be helpful if the developer continued making this game"
+texture = SubResource("AtlasTexture_vod0c")
+metadata/_custom_type_script = "uid://c6ien7mhsrxy4"

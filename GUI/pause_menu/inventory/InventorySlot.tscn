@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwoume8u3kuok"]
+
+[ext_resource type="Texture2D" uid="uid://cxcrfhb1pue2x" path="res://entities/items/sprites/items.png" id="1_cx87p"]
+[ext_resource type="Script" uid="uid://cvs0ws1tsc01e" path="res://GUI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="1_ie1j0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wpla"]
+atlas = ExtResource("1_cx87p")
+region = Rect2(0, 0, 32, 32)
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_ie1j0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_7wpla")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 31.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 8
+text = "99"
+horizontal_alignment = 2
