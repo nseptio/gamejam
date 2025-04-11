@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://u1xcw8fkirav"]
+[gd_scene load_steps=19 format=4 uid="uid://u1xcw8fkirav"]
 
 [ext_resource type="PackedScene" uid="uid://bc68a1t4hnh6g" path="res://tilemaps/Grass.tscn" id="1_0vkkq"]
 [ext_resource type="Script" uid="uid://b0ka7l1gkmht5" path="res://levels/scripts/level.gd" id="1_4i6hi"]
@@ -13,6 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://c6lcuyer7dh04" path="res://levels/LevelTransition.tscn" id="11_yje0o"]
 [ext_resource type="PackedScene" uid="uid://cpcd2he70sf17" path="res://entities/props/decorations/Gate.tscn" id="12_j2r4y"]
 [ext_resource type="PackedScene" uid="uid://cs2tfdk1ko50n" path="res://levels/area_01/FinalGate.tscn" id="13_72wca"]
+[ext_resource type="Script" uid="uid://dw647fyuv1xye" path="res://levels/area_01/final_gate_trigger.gd" id="14_dj7q5"]
+[ext_resource type="PackedScene" uid="uid://b6kxe7l1dans5" path="res://entities/items/item_pickup/ItemPickup.tscn" id="15_spghm"]
+[ext_resource type="Resource" uid="uid://cx72o0gcby8xx" path="res://entities/items/gem.tres" id="16_h4vhq"]
+[ext_resource type="PackedScene" uid="uid://c3q4dc7k2bg4q" path="res://entities/enemies/goblin/Goblin.tscn" id="17_h4vhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7en8r"]
+radius = 14.0
 
 [node name="A03" type="Node2D"]
 z_as_relative = false
@@ -136,8 +143,39 @@ level = "uid://2gy0hnphhbwn"
 target_transition_area = "LevelTransition2"
 size = 4
 
+[node name="LevelTransition2" parent="." instance=ExtResource("11_yje0o")]
+position = Vector2(256, -480)
+level = "uid://k7e4qs2q4wwa"
+size = 3
+side = 2
+
 [node name="Gate" parent="." instance=ExtResource("12_j2r4y")]
 position = Vector2(257, -424)
 
 [node name="FinalGate" parent="." instance=ExtResource("13_72wca")]
 position = Vector2(256, -448)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_dj7q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(585, -334)
+shape = SubResource("CircleShape2D_7en8r")
+debug_color = Color(1, 0.394731, 0.250904, 0.42)
+
+[node name="Pearl" parent="." instance=ExtResource("15_spghm")]
+position = Vector2(586, -336)
+item_data = ExtResource("16_h4vhq")
+
+[node name="Goblin" parent="." instance=ExtResource("17_h4vhq")]
+position = Vector2(258, -111)
+scale = Vector2(2, 2)
+hp = 24
+
+[node name="Goblin2" parent="." instance=ExtResource("17_h4vhq")]
+position = Vector2(109, -54)
+scale = Vector2(0.75, 0.75)
+
+[node name="Goblin3" parent="." instance=ExtResource("17_h4vhq")]
+position = Vector2(419, -55)
+scale = Vector2(0.75, 0.75)

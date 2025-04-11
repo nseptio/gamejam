@@ -11,7 +11,7 @@ region = Rect2(0, 0, 32, 32)
 [resource]
 script = ExtResource("1_f8lrb")
 name = "Gem"
-description = "A valuable item, but also the key to opening the final gate if you have 3"
+description = "[Gem] A valuable item, but also the key to opening the final gate if you have 3"
 texture = SubResource("AtlasTexture_f8lrb")
 effects = Array[ExtResource("1_pmsub")]([])
 metadata/_custom_type_script = "uid://c6ien7mhsrxy4"

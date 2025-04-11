@@ -21,10 +21,11 @@ signal direction_changed(new_direction: Vector2)
 signal player_damaged(hurt_box: HurtBox)
 
 func _ready() -> void:
+	add_to_group("player")
 	PlayerManager.player = self
 	state_machine.initialize(self)
 	hit_box.Damaged.connect(_take_damage)
-	update_hp(99) # temp
+	update_hp(max_hp)
 
 
 # Called every frame
@@ -72,7 +73,7 @@ func _take_damage(hurt_box: HurtBox) -> void:
 		player_damaged.emit(hurt_box)
 	else:
 		player_damaged.emit(hurt_box)
-		update_hp(99) # temp
+		die()
 
 func update_hp(delta: int) -> void:
 	hp = clampi(hp + delta, 0, max_hp)
@@ -85,3 +86,23 @@ func make_invulnerable(_duration: float = 1.0) -> void:
 	await get_tree().create_timer(_duration).timeout
 	is_invulnerable = false
 	hit_box.monitoring = true
+
+func die() -> void:
+	# Disable player input
+	set_process_input(false)
+	set_physics_process(false)
+	set_process(false)
+	
+	# Play death animation if you have one
+	if animation_player.has_animation("death"):
+		animation_player.play("death")
+		await animation_player.animation_finished
+	
+	# Show game over screen
+	
+	await SceneTransition.fade_out()
+	await get_tree().process_frame
+	get_tree().change_scene_to_file("res://GUI/game_over/GameOver.tscn")
+	await SceneTransition.fade_in()
+	
+	await get_tree().process_frame

@@ -20,7 +20,7 @@ region = Rect2(32, 0, 32, 32)
 [resource]
 script = ExtResource("1_htkkx")
 name = "Potion"
-description = "It looks like syrup, but it is very healthy"
+description = "[Potion] It looks like syrup, but it is very healthy"
 texture = SubResource("AtlasTexture_htkkx")
 effects = Array[ExtResource("1_h1axh")]([SubResource("Resource_nctvl")])
 metadata/_custom_type_script = "uid://c6ien7mhsrxy4"

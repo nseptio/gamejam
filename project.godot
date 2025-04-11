@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="GameJam"
+run/main_scene="uid://dpge3ns3p2ial"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://i66lh1y2bwtj"
 
 [autoload]
 
@@ -21,6 +22,7 @@ PlayerHud="*res://GUI/player_hud/PlayerHUD.tscn"
 PlayerManager="*res://globals/player_manager.gd"
 SceneTransition="*res://GUI/scene_transition/SceneTransition.tscn"
 PauseMenu="*res://GUI/pause_menu/PauseMenu.tscn"
+MusicManager="*res://globals/music_background/MusicManager.tscn"
 
 [display]
 

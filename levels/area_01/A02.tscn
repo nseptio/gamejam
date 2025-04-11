@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2gy0hnphhbwn"]
+[gd_scene load_steps=18 format=4 uid="uid://2gy0hnphhbwn"]
 
 [ext_resource type="Script" uid="uid://b0ka7l1gkmht5" path="res://levels/scripts/level.gd" id="1_ijriv"]
 [ext_resource type="PackedScene" uid="uid://bc68a1t4hnh6g" path="res://tilemaps/Grass.tscn" id="2_skd8a"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://cx72o0gcby8xx" path="res://entities/items/gem.tres" id="13_6cb23"]
 [ext_resource type="Resource" uid="uid://dfn1nkn8xt2dl" path="res://entities/items/potion.tres" id="14_p4ufm"]
 [ext_resource type="Resource" uid="uid://0xfhe57ggprb" path="res://entities/items/stone.tres" id="15_ldtty"]
+[ext_resource type="PackedScene" uid="uid://c3q4dc7k2bg4q" path="res://entities/enemies/goblin/Goblin.tscn" id="16_ldtty"]
+[ext_resource type="PackedScene" uid="uid://oql6ofdtyfns" path="res://entities/enemies/slime/Slime.tscn" id="17_ukk64"]
 
 [node name="Level2" type="Node2D"]
 z_as_relative = false
@@ -98,14 +100,68 @@ position = Vector2(-128, 208)
 level = "uid://c6wwedtihvn1t"
 size = 3
 
-[node name="ItemPickup" parent="." instance=ExtResource("12_6pihk")]
-position = Vector2(166, 74)
+[node name="Gem" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(-77, 77)
 item_data = ExtResource("13_6cb23")
 
-[node name="ItemPickup2" parent="." instance=ExtResource("12_6pihk")]
-position = Vector2(122, 48)
+[node name="Potion" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(259, 86)
 item_data = ExtResource("14_p4ufm")
 
-[node name="ItemPickup3" parent="." instance=ExtResource("12_6pihk")]
-position = Vector2(149, 107)
+[node name="Potion2" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(188, 85)
+item_data = ExtResource("14_p4ufm")
+
+[node name="Potion3" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(-53, 56)
+item_data = ExtResource("14_p4ufm")
+
+[node name="Potion4" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(-106, 57)
+item_data = ExtResource("14_p4ufm")
+
+[node name="Potion5" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(-78, 41)
+item_data = ExtResource("14_p4ufm")
+
+[node name="Stone" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(488, 38)
 item_data = ExtResource("15_ldtty")
+
+[node name="Stone2" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(499, 133)
+item_data = ExtResource("15_ldtty")
+
+[node name="Stone3" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(391, 170)
+item_data = ExtResource("15_ldtty")
+
+[node name="Stone4" parent="." instance=ExtResource("12_6pihk")]
+position = Vector2(474, 243)
+item_data = ExtResource("15_ldtty")
+
+[node name="Goblin" parent="." instance=ExtResource("16_ldtty")]
+position = Vector2(86, -3)
+scale = Vector2(0.5, 0.5)
+
+[node name="Goblin2" parent="." instance=ExtResource("16_ldtty")]
+position = Vector2(301, 13)
+scale = Vector2(0.5, 0.5)
+
+[node name="Goblin3" parent="." instance=ExtResource("16_ldtty")]
+position = Vector2(216, -23)
+scale = Vector2(0.5, 0.5)
+
+[node name="Goblin4" parent="." instance=ExtResource("16_ldtty")]
+position = Vector2(-75, 3)
+scale = Vector2(0.5, 0.5)
+
+[node name="Goblin5" parent="." instance=ExtResource("16_ldtty")]
+position = Vector2(229, -242)
+scale = Vector2(0.5, 0.5)
+
+[node name="Slime" parent="." instance=ExtResource("17_ukk64")]
+position = Vector2(-80, -64)
+
+[node name="Slime2" parent="." instance=ExtResource("17_ukk64")]
+position = Vector2(472, -224)
