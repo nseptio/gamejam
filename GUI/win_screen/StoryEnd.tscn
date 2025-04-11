@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://k7e4qs2q4wwa"]
+
+[ext_resource type="Script" uid="uid://cve7da8i5bnbj" path="res://GUI/win_screen/story_end.gd" id="1_f0quf"]
+[ext_resource type="FontFile" uid="uid://0lm7ojbu4lit" path="res://GUI/Pixeled.ttf" id="2_6er6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sll7t"]
+bg_color = Color(0.6, 0.0627451, 0.772549, 0.203922)
+
+[node name="StoryEnd" type="CanvasLayer"]
+layer = 10
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f0quf")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.192157, 0.145098, 1)
+
+[node name="MainMenuButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -37.0
+offset_right = 48.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.473184, 0.710404, 0.605242, 1)
+theme_override_fonts/font = ExtResource("2_6er6o")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_sll7t")
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 460.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 11
+text = "\"After scouring the treacherous island, you gathered the scattered, shimmering gems needed to awaken the dungeon's ancient gateway. Its entrance was fiercely guarded by a brutish Goblin Boss, a sentinel who tested your skills, but ultimately fell before your determined advance. The path inside was finally open.
+
+Now, casting aside lingering doubts, you've stepped across the threshold into the legendary dungeon itself. Fueled by sheer audacity and the burning hope of finding the wish-granting Relic, you venture deeper into the darkness that has swallowed countless adventurers before. The true ordeal within the unconquered depths has just begun... To be continued.\""
+horizontal_alignment = 1
+autowrap_mode = 2
