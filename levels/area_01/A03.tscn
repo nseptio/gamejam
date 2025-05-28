@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://u1xcw8fkirav"]
+[gd_scene load_steps=18 format=4 uid="uid://u1xcw8fkirav"]
 
 [ext_resource type="PackedScene" uid="uid://bc68a1t4hnh6g" path="res://tilemaps/Grass.tscn" id="1_0vkkq"]
-[ext_resource type="Script" uid="uid://b0ka7l1gkmht5" path="res://levels/scripts/level.gd" id="1_4i6hi"]
+[ext_resource type="Script" path="res://levels/scripts/level.gd" id="1_4i6hi"]
 [ext_resource type="PackedScene" uid="uid://ply4qicbm8p7" path="res://levels/PlayerSpawn.tscn" id="2_qwimf"]
 [ext_resource type="PackedScene" uid="uid://c2o17u1vto3mm" path="res://entities/props/decorations/PillarTomb.tscn" id="3_4i6hi"]
 [ext_resource type="PackedScene" uid="uid://dogm6kqjpuxhu" path="res://entities/props/decorations/Tree1.tscn" id="4_yje0o"]
@@ -13,13 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://c6lcuyer7dh04" path="res://levels/LevelTransition.tscn" id="11_yje0o"]
 [ext_resource type="PackedScene" uid="uid://cpcd2he70sf17" path="res://entities/props/decorations/Gate.tscn" id="12_j2r4y"]
 [ext_resource type="PackedScene" uid="uid://cs2tfdk1ko50n" path="res://levels/area_01/FinalGate.tscn" id="13_72wca"]
-[ext_resource type="Script" uid="uid://dw647fyuv1xye" path="res://levels/area_01/final_gate_trigger.gd" id="14_dj7q5"]
+[ext_resource type="Script" path="res://levels/area_01/final_gate_trigger.gd" id="14_dj7q5"]
 [ext_resource type="PackedScene" uid="uid://b6kxe7l1dans5" path="res://entities/items/item_pickup/ItemPickup.tscn" id="15_spghm"]
 [ext_resource type="Resource" uid="uid://cx72o0gcby8xx" path="res://entities/items/gem.tres" id="16_h4vhq"]
 [ext_resource type="PackedScene" uid="uid://c3q4dc7k2bg4q" path="res://entities/enemies/goblin/Goblin.tscn" id="17_h4vhq"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7en8r"]
-radius = 14.0
 
 [node name="A03" type="Node2D"]
 z_as_relative = false
@@ -139,13 +136,13 @@ position = Vector2(-112, 248)
 
 [node name="LevelTransition" parent="." instance=ExtResource("11_yje0o")]
 position = Vector2(-128, 192)
-level = "uid://2gy0hnphhbwn"
+level = "res://levels/area_01/A02.tscn"
 target_transition_area = "LevelTransition2"
 size = 4
 
 [node name="LevelTransition2" parent="." instance=ExtResource("11_yje0o")]
 position = Vector2(256, -480)
-level = "uid://k7e4qs2q4wwa"
+level = "res://GUI/win_screen/StoryEnd.tscn"
 size = 3
 side = 2
 
@@ -154,18 +151,12 @@ position = Vector2(257, -424)
 
 [node name="FinalGate" parent="." instance=ExtResource("13_72wca")]
 position = Vector2(256, -448)
-
-[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("14_dj7q5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(585, -334)
-shape = SubResource("CircleShape2D_7en8r")
-debug_color = Color(1, 0.394731, 0.250904, 0.42)
-
-[node name="Pearl" parent="." instance=ExtResource("15_spghm")]
+[node name="Gem" parent="." instance=ExtResource("15_spghm")]
 position = Vector2(586, -336)
 item_data = ExtResource("16_h4vhq")
+item_id = "gem-3"
 
 [node name="Goblin" parent="." instance=ExtResource("17_h4vhq")]
 position = Vector2(258, -111)

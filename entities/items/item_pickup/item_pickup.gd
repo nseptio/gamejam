@@ -2,6 +2,7 @@
 class_name ItemPickup extends Node2D
 
 @export var item_data: ItemData: set = _set_item_data
+@export var item_id: String
 
 @onready var area_2d: Area2D = $Area2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -11,6 +12,11 @@ func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
+		
+	if GameState.is_item_collected(item_id):
+		queue_free()
+		return
+	
 	area_2d.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(b) -> void:
@@ -20,6 +26,7 @@ func _on_body_entered(b) -> void:
 				item_pickup()
 
 func item_pickup() -> void:
+	GameState.mark_item_collected(item_id)
 	area_2d.body_entered.disconnect(_on_body_entered)
 	audio_stream_player_2d.play()
 	visible = false

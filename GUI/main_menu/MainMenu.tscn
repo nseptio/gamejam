@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpge3ns3p2ial"]
 
-[ext_resource type="Script" uid="uid://b3q21qfld8bsc" path="res://GUI/main_menu/main_menu.gd" id="1_jykn4"]
+[ext_resource type="Script" path="res://GUI/main_menu/main_menu.gd" id="1_jykn4"]
 [ext_resource type="Texture2D" uid="uid://cdqf8mbgv8e6c" path="res://entities/props/sprites/TX Props.png" id="2_jxn21"]
 [ext_resource type="FontFile" uid="uid://0lm7ojbu4lit" path="res://GUI/Pixeled.ttf" id="2_nv7a7"]
 

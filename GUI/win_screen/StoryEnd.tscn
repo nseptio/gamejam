@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://k7e4qs2q4wwa"]
 
-[ext_resource type="Script" uid="uid://cve7da8i5bnbj" path="res://GUI/win_screen/story_end.gd" id="1_f0quf"]
+[ext_resource type="Script" path="res://GUI/win_screen/story_end.gd" id="1_f0quf"]
 [ext_resource type="FontFile" uid="uid://0lm7ojbu4lit" path="res://GUI/Pixeled.ttf" id="2_6er6o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sll7t"]
@@ -63,6 +63,7 @@ offset_bottom = 232.0
 theme_override_font_sizes/font_size = 11
 text = "\"After scouring the treacherous island, you gathered the scattered, shimmering gems needed to awaken the dungeon's ancient gateway. Its entrance was fiercely guarded by a brutish Goblin Boss, a sentinel who tested your skills, but ultimately fell before your determined advance. The path inside was finally open.
 
-Now, casting aside lingering doubts, you've stepped across the threshold into the legendary dungeon itself. Fueled by sheer audacity and the burning hope of finding the wish-granting Relic, you venture deeper into the darkness that has swallowed countless adventurers before. The true ordeal within the unconquered depths has just begun... To be continued.\""
+Now, casting aside lingering doubts, you've stepped across the threshold into the legendary dungeon itself. Fueled by sheer audacity and the burning hope of finding the wish-granting Relic, you venture deeper into the darkness that has swallowed countless adventurers before. The true ordeal within the unconquered depths has just begun...\"
+To be continued."
 horizontal_alignment = 1
 autowrap_mode = 2

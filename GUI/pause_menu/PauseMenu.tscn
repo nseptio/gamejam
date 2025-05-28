@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://uicvxq8os1fh"]
 
-[ext_resource type="Script" uid="uid://csa1dcjkxa3nm" path="res://GUI/pause_menu/pause_menu.gd" id="1_vhkkt"]
+[ext_resource type="Script" path="res://GUI/pause_menu/pause_menu.gd" id="1_vhkkt"]
 [ext_resource type="Texture2D" uid="uid://cxcrfhb1pue2x" path="res://entities/items/sprites/items.png" id="2_xyt8q"]
 [ext_resource type="PackedScene" uid="uid://cwoume8u3kuok" path="res://GUI/pause_menu/inventory/InventorySlot.tscn" id="3_dfhdr"]
-[ext_resource type="Script" uid="uid://b617bt6jy16f3" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="3_laftm"]
+[ext_resource type="Script" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="3_laftm"]
 [ext_resource type="Resource" uid="uid://ddrje1b2wc7ec" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="4_mc7vq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhkkt"]
@@ -64,7 +64,7 @@ text = "MAIN MENU"
 [node name="Button_Exit" type="Button" parent="Control/HBoxContainer"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
-text = "EXIT"
+text = "QUIT"
 
 [node name="Label" type="Label" parent="Control"]
 modulate = Color(0.607843, 0.843137, 0.980392, 0.705882)

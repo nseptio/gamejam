@@ -1,19 +1,27 @@
-extends Area2D
+extends Node2D
 
-var gate_removed = false
+var required_gems := [
+	"gem-1",
+	"gem-2",
+	"gem-3"
+]
 
-func _ready():
-	body_entered.connect(_on_body_entered)
+func _ready() -> void:
+	GameState.item_collected.connect(_on_item_collected)
+	_check_and_open_gate()
 
-func _on_body_entered(body):
-	if body.is_in_group("player") and not gate_removed:
-		remove_final_gate()
+func _on_item_collected(item_id: String) -> void:
+	if item_id in required_gems:
+		_check_and_open_gate()
 
-func remove_final_gate():
-	var final_gate = get_parent().get_node_or_null("FinalGate")
-	if final_gate != null:
-		gate_removed = true
-		print("Gate removed!")
-		final_gate.queue_free()
-	else:
-		print("Final Gate not found or already removed")
+func _check_and_open_gate() -> void:
+	for gem_id in required_gems:
+		if not GameState.is_item_collected(gem_id):
+			return
+	_open_gate()
+
+func _open_gate() -> void:
+	if not is_inside_tree():
+		return
+	print("All gems collected! Opening final gate...")
+	queue_free()
